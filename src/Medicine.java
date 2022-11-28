@@ -80,8 +80,7 @@ public abstract class Medicine {
 
     public String toString()
     {
-        String theResult = new String();
-        theResult = theResult.concat("Medicine Type = ").concat(getType().name());
+        String theResult = "Medicine Type = ".concat(getType().name());
         theResult = theResult.concat("\nMedicine Name = ").concat(getMedicineName());
         theResult = theResult.concat("\nCompany Name = ").concat(getCompanyName());
         theResult = theResult.concat("\nCompany e-mail = ").concat(getCompanyEmail());
@@ -94,7 +93,7 @@ public abstract class Medicine {
 
     /**
      * Hidden from external world in order to prevent initialization
-     * @param type
+     * @param type The Type of the Medicine
      */
     private void setType(Type type)
     {
@@ -116,7 +115,8 @@ public abstract class Medicine {
     public abstract int totalInventory();
 
     //true if quantity >0 else false
-    public boolean inStock(){
+    public boolean inStock()
+    {
         if(getQuantity() > 0)
             return true;
         else
@@ -155,7 +155,7 @@ public abstract class Medicine {
                 newMedicine = new Syrup(name, compName, email, price, quantity, expirationYear, numOfPillsInBox);
                 break;
             */
-            //This is the new look and feel of swith case
+            //This is the new look and feel of switch case
             case PILLS   -> newMedicine = new Pills(name, compName, email, price, quantity, expirationYear, numOfPillsInBox);
             case INHALER -> newMedicine = new Inhaler(name, compName, email, price, quantity, expirationYear, numOfPillsInBox);
             case SYRUP   -> newMedicine = new Syrup(name, compName, email, price, quantity, expirationYear, numOfPillsInBox);
