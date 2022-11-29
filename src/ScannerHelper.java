@@ -125,29 +125,41 @@ public class ScannerHelper {
         return theScannedValue;
     }
 
-    // Deligator to scanInt with min and max value
+    /** This is a Delegator to the scanInt method with min and max values
+     * the valid value range is minValue <= parameter <= maxvalue
+     * @param parameterName - the representative name of the parameter
+     * @param minValue - the minimum legal value of the parameter
+     * @param maxValue - the maximum legal value of the parameter
+     * @return the validated int value
+     */
     static int scanInt(String parameterName, int minValue, int maxValue)
     {
         return scanInt(new Scanner(System.in),parameterName,minValue,maxValue);
     }
 
-    // Deligator to scanInt without min and max values validation
-    static int scanInt(Scanner aScanner, String parameterName) {
+    /** This is a Delegator to the scanInt without min and max values validation
+     *
+     * @param aScanner - a pre created scanner
+     * @param parameterName - the parameter name
+     * @return - a legal int value
+     */
+    static int scanInt(Scanner aScanner, String parameterName)
+    {
         return scanInt(aScanner,parameterName,-1,-1);
     }
 
 
 
-        /**
-         * Scans an int type input including value validation
-         *
-         * @param aScanner      - the scanner object in order to prevent creation again and again
-         * @param parameterName - the name of the parameter to be scanned, it will be presented to the end user
-         * @param minVal        - the minmum value to be calidated
-         * @param maxVal        - the max value to be validated
-         * If both values are -1 ignore validation
-         * @return - the validated int value
-         */
+    /**
+     * Scans an int type input including value validation
+     *
+     * @param aScanner      - the scanner object in order to prevent creation again and again
+     * @param parameterName - the name of the parameter to be scanned, it will be presented to the end user
+     * @param minVal        - the minmum value to be calidated
+     * @param maxVal        - the max value to be validated
+     * If both values are -1 ignore validation
+     * @return - the validated int value
+     */
     static int scanInt(Scanner aScanner, String parameterName, int minVal, int maxVal) {
         int theScannedValue = 0;
         boolean scannedSuccessfuly = false;
